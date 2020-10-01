@@ -43,7 +43,7 @@ class Car(Vehicle):
       super().info()
       print(f'Engine size: {self.getEngineSize()}, Number of doors: {self.getNumDoors()}')
 
-class PickupTruck(Vehicle):
+class Pickup(Vehicle):
     def __init__(self, make, model, color, fueltype, options, cabStyle, bedLength):
         super().__init__(make, model, color, fueltype, options)
         self.cabStyle = cabStyle
@@ -98,16 +98,16 @@ def getCarInput():
   carDetails["numDoors"] = input("How many doors? ")
   return carDetails
 
-def getPickupTruckInput():
-  PickupTruckDetails = {}
-  PickupTruckDetails["make"] = input("What is the make? ")
-  PickupTruckDetails["model"] = input("What is the model? ")
-  PickupTruckDetails["color"] = input("What is the color? ")
-  PickupTruckDetails["fuelType"] = input("What is the fuel type? ")
-  PickupTruckDetails["options"] = selectOptions()
-  PickupTruckDetails["cabStyle"] = input("What is the cab style? ")
-  PickupTruckDetails["bedLength"] = input("What is the bed length? ")
-  return PickupTruckDetails
+def getPickupInput():
+  PickupDetails = {}
+  PickupDetails["make"] = input("What is the make? ")
+  PickupDetails["model"] = input("What is the model? ")
+  PickupDetails["color"] = input("What is the color? ")
+  PickupDetails["fuelType"] = input("What is the fuel type? ")
+  PickupDetails["options"] = selectOptions()
+  PickupDetails["cabStyle"] = input("What is the cab style? ")
+  PickupDetails["bedLength"] = input("What is the bed length? ")
+  return PickupDetails
 
 def showGarage(garage):
   for vehicle in garage:
@@ -133,8 +133,8 @@ def main():
       garage.append(car)
       print("Vehicle added\n")
     elif (garageOption == 2):
-      vehicleDetails = getPickupTruckInput()
-      PickupTruck = PickupTruck(vehicleDetails["make"],
+      vehicleDetails = getPickupInput()
+      pickup=Pickup(vehicleDetails["make"],
                     vehicleDetails["model"],
                     vehicleDetails["color"],
                     vehicleDetails["fuelType"],
@@ -142,7 +142,7 @@ def main():
                     vehicleDetails["cabStyle"],
                     vehicleDetails["bedLength"])
 
-      garage.append(PickupTruck)
+      garage.append(Pickup)
       print("Vehicle added\n")
     elif (garageOption == 3):
       if (len(garage) == 0):
@@ -156,5 +156,5 @@ def main():
       print("Invalid option, please try again")
 
     input("Press any number key to continue...")
-
+              
 main()
