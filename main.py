@@ -69,7 +69,6 @@ def printMenu():
   print("[3] Show me my Super Cool Garage")
   print("[4] Press 4 to quit")
 
-  # Attempting to convert this input into an integer here without any try/except is going to cause a crash if the person doesn't enter an integer.
   return int(input("Please choose an option from the menu: "))
 
 def selectOptions():
