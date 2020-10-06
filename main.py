@@ -67,8 +67,9 @@ def printMenu():
   print("[1] Add a Car")
   print("[2] Add a Pick up Truck")
   print("[3] Show me my Super Cool Garage")
-  print("[4] Quit")
+  print("[4] Press 4 to quit")
 
+  # Attempting to convert this input into an integer here without any try/except is going to cause a crash if the person doesn't enter an integer.
   return int(input("Please choose an option from the menu: "))
 
 def selectOptions():
@@ -155,6 +156,5 @@ def main():
     else:
       print("Invalid option, please try again")
 
-    input("Press any number key to continue...")
-              
+      input("Press any number key to continue...")
 main()
