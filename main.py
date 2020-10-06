@@ -142,7 +142,7 @@ def main():
                     vehicleDetails["cabStyle"],
                     vehicleDetails["bedLength"])
 
-      garage.append(Pickup)
+      garage.append(pickup)
       print("Vehicle added\n")
     elif (garageOption == 3):
       if (len(garage) == 0):
